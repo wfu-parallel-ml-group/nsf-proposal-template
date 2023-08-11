@@ -16,23 +16,21 @@
 \usepackage{tcolorbox}
 
 % define custom colors
-\definecolor{wfugold}{rgb}{158, 126, 56}
+\definecolor{wfugold}{RGB}{158, 126, 56}
 
-% define task command
-\newtheorem{task}{Task}[section]
+% define theorem env
 \newtheorem{thm}{Theorem}
-\crefname{task}{task}{tasks}
-\renewcommand{\thetask}{\arabic{section}.\arabic{task}}
 
 \tcbuselibrary{theorems}
 \newtcbtheorem
-  []% init options
+  [auto counter,number within=section,crefname={task}{tasks}]% init options
   {task}% name
   {Task}% title
   {%
-    colback=wfugold!5,
-    colframe=wfugold!35!black,
+    colback=wfugold!20,
+    colframe=wfugold,
     fonttitle=\bfseries,
+    title=Task \thetcbcounter: #2,#1
   }% options
   {def}% prefix
 
