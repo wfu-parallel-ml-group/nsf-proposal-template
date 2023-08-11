@@ -1,9 +1,10 @@
 \documentclass[11pt]{article}
-\usepackage{nsf}
+\usepackage{proposal}
 
 \begin{document}
 \include{project-summary}
 
+\setcounter{page}{1}
 \input{text/intro.tex}
 \input{text/background.tex}
 
@@ -12,10 +13,27 @@
 \input{text/broader-impacts.tex}
 \input{text/prior-nsf-support.tex}
 
+\setcounter{page}{1}
+\justifying
+\bibliographystyle{siamplain}
+\bibliography{ref/ref}
+
+\setcounter{page}{1}
+\section{Biographical Sketches}
+\includepdf[pages=-]{bio/}
+
+\setcounter{page}{1}
+\section{Current and Pending Support}
+\includepdf[pages=-]{support/}
+
 
 %% add appendices, comment out irrelevant ones
+\setcounter{page}{1}
 \input{appendix/budget-justification.tex}
+\setcounter{page}{1}
 \input{appendix/facilities.tex}
+\setcounter{page}{1}
 \input{appendix/data-management-plan.tex}
+\setcounter{page}{1}
 \input{appendix/postdoc-mentoring-plan.tex}
 \end{document}

@@ -13,6 +13,10 @@
 \usepackage{algorithm,algpseudocode}
 \usepackage{soul}
 \usepackage{ragged2e}
+\usepackage{tcolorbox}
+
+% define custom colors
+\definecolor{wfugold}{rgb}{158, 126, 56}
 
 % define task command
 \newtheorem{task}{Task}[section]
@@ -20,7 +24,20 @@
 \crefname{task}{task}{tasks}
 \renewcommand{\thetask}{\arabic{section}.\arabic{task}}
 
+\tcbuselibrary{theorems}
+\newtcbtheorem
+  []% init options
+  {task}% name
+  {Task}% title
+  {%
+    colback=wfugold!5,
+    colframe=wfugold!35!black,
+    fonttitle=\bfseries,
+  }% options
+  {def}% prefix
+
 % define todo macro
-\newcommand\todo[1]{\textcolor{red}{#1}}
+\newcommand{\todo}[1]{\textcolor{red}{#1}}
+
 \DeclareMathOperator*{\argmin}{arg\,min}
 \DeclareMathOperator*{\argmax}{arg\,max}
