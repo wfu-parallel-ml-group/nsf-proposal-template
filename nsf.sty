@@ -1,0 +1,26 @@
+\usepackage[letterpaper,margin=1in]{geometry}
+\usepackage{times}
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath, amssymb}
+\usepackage{xcolor}
+\usepackage{cleveref}
+\usepackage{cite}
+\usepackage[inline]{enumitem}
+\usepackage[mode=buildnew]{standalone}
+\usepackage{tikz}
+\usepackage{caption}
+\usepackage{subcaption}
+\usepackage{algorithm,algpseudocode}
+\usepackage{soul}
+\usepackage{ragged2e}
+
+% define task command
+\newtheorem{task}{Task}[section]
+\newtheorem{thm}{Theorem}
+\crefname{task}{task}{tasks}
+\renewcommand{\thetask}{\arabic{section}.\arabic{task}}
+
+% define todo macro
+\newcommand\todo[1]{\textcolor{red}{#1}}
+\DeclareMathOperator*{\argmin}{arg\,min}
+\DeclareMathOperator*{\argmax}{arg\,max}
