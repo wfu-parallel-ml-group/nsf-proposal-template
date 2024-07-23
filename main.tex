@@ -1,39 +1,17 @@
-\documentclass[11pt]{article}
-\usepackage{proposal}
-
+\documentclass[11pt,oneside,final]{article}
+\usepackage{nsf-proposal}
+% this document builds the project description and ships out references to the references-cited document
 \begin{document}
-\include{project-summary}
+% create document structure using section headings and input to read content from text/ subdir
+\section{Introduction}\label{sec:intro}
+\input{text/intro}
 
-\setcounter{page}{1}
-\input{text/intro.tex}
-\input{text/background.tex}
+% shipout the references
+\newpage
+\AtBeginShipout{%
+\AtBeginShipoutDiscard
+}
+\bibliographystyle{unsrt}
+\bibliography{refs}
 
-%% add more inputs, as needed
-
-\input{text/broader-impacts.tex}
-\input{text/prior-nsf-support.tex}
-
-\setcounter{page}{1}
-\justifying
-\bibliographystyle{siamplain}
-\bibliography{ref/ref}
-
-\setcounter{page}{1}
-\section{Biographical Sketches}
-\includepdf[pages=-]{bio/}
-
-\setcounter{page}{1}
-\section{Current and Pending Support}
-\includepdf[pages=-]{support/}
-
-
-%% add appendices, comment out irrelevant ones
-\setcounter{page}{1}
-\input{appendix/budget-justification.tex}
-\setcounter{page}{1}
-\input{appendix/facilities.tex}
-\setcounter{page}{1}
-\input{appendix/data-management-plan.tex}
-\setcounter{page}{1}
-\input{appendix/postdoc-mentoring-plan.tex}
 \end{document}

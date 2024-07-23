@@ -1,0 +1,39 @@
+\usepackage[T1]{fontenc}
+\usepackage{mathptmx} % use a times new roman font style
+\pagenumbering{gobble} % Research.gov will perform pagination
+\usepackage[margin=1in]{geometry}
+\usepackage{xcolor}
+\usepackage{graphicx} % Required for inserting images
+\graphicspath{{./figs/}}
+\usepackage{wrapfig}
+\usepackage{atbegshi} % Need shipout since NSF requires references and appendices to be uploaded as separate documents
+\usepackage{amsmath, amssymb, amsthm}
+% load pifont and new commands to create pretty checkmarks and x-marks in tables
+\usepackage{pifont}
+\newcommand{\cmark}{\ding{51}}%
+\newcommand{\xmark}{\ding{55}}%
+\usepackage[colorlinks,citecolor=red,final]{hyperref} % setup citation colors and use colorlinks to catch errant \url commands which NSF won't accept
+\usepackage{cleveref}
+\usepackage[inline]{enumitem} % create inline enumerated items using the enumerate* environment
+\usepackage[obeyFinal]{easy-todo}
+\usepackage{algorithm,algpseudocode}
+\usepackage[numbers, sort&compress]{natbib} % number references by order of appearance. Also sort and compress citations to use less space
+% define new theorem environments for research (rg) and education (eg) goals and applications.
+\newtheorem{rg}{Research Goal}
+\newtheorem{eg}{Education Goal}
+\newtheorem{app}{Application}
+% define cleveref names
+\crefname{rg}{RG}{RGs}
+\crefname{eg}{EG}{EGs}
+\crefname{app}{App}{Apps}
+
+% define macros for matrices and vectors
+\newcommand{\M}[1]{\mathbf{\MakeUppercase{#1}}}
+\newcommand{\V}[1]{\mathbf{\MakeLowercase{#1}}}
+% define macro to add tildes to matrices
+\newcommand{\tM}[1]{\tilde{\mathbf{\MakeUppercase{#1}}}}
+% define macro for set of all reals
+\newcommand{\R}{\mathbb{R}}
+% define macros for optimization problems
+\DeclareMathOperator*{\argmin}{arg\,min}
+\DeclareMathOperator*{\argmax}{arg\,max}

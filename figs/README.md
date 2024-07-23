@@ -1,0 +1,1 @@
+A directory for figures used in the proposal. The graphicspath command will look in this directory if you includegraphics without an absolute path
